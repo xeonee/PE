@@ -1,9 +1,36 @@
+package com.projecteuler.solutions;
+
 import java.util.*;
 
 public class Q013_LargeSum {
-
+	public static List<String> lst = new ArrayList<String>();
 	public static void main(String[] args) {
-		List<String> lst = new ArrayList<String>();
+		createList();
+
+		int n = 10;
+		int carryF = 0;
+		
+		int len = 50;
+		long sum = 0;
+		for (int i = 0; i < 5; i++) {
+			sum = 0;
+			for (String str : lst) {
+				sum = sum + carryF+ Long.parseLong(str.substring(len-n, len));
+				carryF = 0;
+			}
+			if(String.valueOf(sum).length() > 10){
+				carryF = (int) (sum/10000000000l); 
+			}
+			len = len - 10;
+//			System.out.println(sum);
+		}
+		System.out.println(String.valueOf(sum).substring(0, 10));
+	}
+
+
+
+
+	private static void createList() {
 		lst.add("37107287533902102798797998220837590246510135740250");
 		lst.add("46376937677490009712648124896970078050417018260538");
 		lst.add("74324986199524741059474233309513058123726617309629");
