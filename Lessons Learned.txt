@@ -6,6 +6,10 @@
 	1 1 2 3 5 8 13 21 34 55 89 144 ...
 	If we only write the even numbers:
 	2 8 34 144...	then E(n)=4*E(n-1)+E(n-2)
-	in general...   then F(n)=4*F(n-3)+F(n-6)
+	so, in general...   then F(n)=4*F(n-3)+F(n-6)
 	
-3. 	
+3. 	Every number n can at most have one prime factor greater than sqrt(n).
+
+4. 	Every 6 digit palindromic number is devisible by 11. that means one of its factors has to be devisible by 11.
+
+5.  
